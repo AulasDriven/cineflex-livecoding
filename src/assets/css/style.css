@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  --cor-fundo-tela: #E5E5E5;
+  --cor-laranja: #E8833A; 
+  --cor-azul: #247A6B;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor-fundo-tela);
+}
