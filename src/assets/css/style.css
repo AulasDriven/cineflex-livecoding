@@ -1,8 +1,10 @@
 * {
   box-sizing: border-box;
   --cor-fundo-tela: #E5E5E5;
+  --cor-fundo-header: #C3CFD9;
   --cor-laranja: #E8833A; 
   --cor-azul: #247A6B;
+  --cor-preta: #293845;
 }
 
 body {
@@ -10,4 +12,9 @@ body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   background-color: var(--cor-fundo-tela);
+  color: var(--cor-preta);
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
