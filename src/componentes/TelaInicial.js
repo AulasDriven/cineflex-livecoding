@@ -15,7 +15,7 @@ function TelaInicial() {
 
   function gerarFilmesEmExibicao() {
     if(filmes.length > 0) {
-      return filmes.map(filme => <Filme />)
+      return filmes.map(({posterURL, id}) => <Filme key={id} id={id} poster={posterURL} />);
     } else {
       return <p>Carregando filmes...</p>
     }
@@ -33,7 +33,7 @@ function TelaInicial() {
 }
 
 const Container = styled.div`
-  margin-top: 70px;
+  margin: 70px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +49,9 @@ const Container = styled.div`
 `;
 
 const Filmes = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export default TelaInicial;
