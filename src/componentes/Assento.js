@@ -2,11 +2,17 @@ import styled from "styled-components";
 
 function Assento(props) {
   const {id, numero, disponivel, selecionado, aoSelecionar} = props;
+  
+  function selecionarAssento() {
+    if(!disponivel) alert("Esse assento não está disponível");
+    else aoSelecionar(id, numero);
+  }
+  
   return (
     <Posicao
       disponivel={disponivel} 
       selecionado={selecionado}
-      onClick={() => aoSelecionar(id)}
+      onClick={selecionarAssento}
     >
       {numero}
     </Posicao>
@@ -14,9 +20,9 @@ function Assento(props) {
 };
 
 function corAssento(selecionado, disponivel) {
-  if(selecionado) return "green";
-  else if(disponivel) return "blue"
-  else return "red"; 
+  if(selecionado) return "#8DD7CF";
+  else if(disponivel) return "#C3CFD9";
+  else return "#FBE192"; 
 }
 
 const Posicao = styled.button`
@@ -28,9 +34,10 @@ const Posicao = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${(props) => props.selecionado ? "green" : "red"};
+    background-color: ${({selecionado, disponivel}) => corAssento(selecionado, disponivel)};
     cursor: pointer;
     margin: 20px 7px;
+    color: #222;
 `
 
 export default Assento;
